@@ -1,6 +1,7 @@
 package com.nader.commonutils.utils
 
 import androidx.appcompat.app.AppCompatActivity
+import com.nader.test.MyUtils
 import java.util.*
 
 /**
@@ -134,6 +135,10 @@ open class ActivityStack private constructor() {
         for (i in 0 until n) {
             killActivity(activityStack!!.firstElement())
         }
+    }
+
+    open fun test() {
+        MyUtils.test()
     }
 
 }
