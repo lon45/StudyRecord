@@ -19,3 +19,20 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# 保留对外暴露的类和方法
+-keep public class com.example.commonutils.** {
+    public *;
+}
+
+# 如果使用了 Kotlin
+-keep class com.example.commonutils.** { *; }
+
+# 保留注解
+-keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
+
+# 如果使用了反射
+-keepclassmembers class com.example.commonutils.** {
+    <fields>;
+    <methods>;
+}
+
