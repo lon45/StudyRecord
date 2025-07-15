@@ -1,7 +1,7 @@
 package com.nader.commonutils.utils
 
 import androidx.appcompat.app.AppCompatActivity
-import com.nader.test.MyUtils
+import com.nader.commonutils.test.MyUtils
 import java.util.*
 
 /**
