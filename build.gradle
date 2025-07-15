@@ -12,3 +12,8 @@ task clean(type: Delete) {
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
 }
+
+wrapper {
+    gradleVersion = "7.3.3"
+    distributionType = Wrapper.DistributionType.ALL
+}
