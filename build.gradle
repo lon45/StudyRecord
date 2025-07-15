@@ -5,8 +5,10 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
 }
 
-defaultTasks 'clean', 'assembleRelease'
-
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
 }
