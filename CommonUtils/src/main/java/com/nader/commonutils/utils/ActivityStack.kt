@@ -141,4 +141,8 @@ class ActivityStack private constructor() {
         MyUtils.test()
     }
 
+    fun test2() {
+        MyUtils.test2()
+    }
+
 }

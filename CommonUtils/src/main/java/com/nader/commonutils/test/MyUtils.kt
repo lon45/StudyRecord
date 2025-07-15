@@ -16,4 +16,7 @@ object MyUtils {
         Log.i("MyUtils","$index")
     }
 
+    fun test2() {
+        Log.i("MyUtils","2222222222222222222222")
+    }
 }
