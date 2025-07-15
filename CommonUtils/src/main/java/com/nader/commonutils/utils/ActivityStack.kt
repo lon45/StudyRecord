@@ -8,7 +8,7 @@ import java.util.*
  *Date: 2022/10/30
  *author: hxc
  */
-open class ActivityStack private constructor() {
+class ActivityStack private constructor() {
 
     private var activityStack : Stack<AppCompatActivity>? = null
 
@@ -32,7 +32,7 @@ open class ActivityStack private constructor() {
     /**
      * 添加Activity到堆栈
      */
-    open fun add(activity: AppCompatActivity?) {
+    fun add(activity: AppCompatActivity?) {
         if (null != activity) {
             activityStack!!.add(activity)
         }
@@ -41,7 +41,7 @@ open class ActivityStack private constructor() {
     /**
      * 结束指定的Activity
      */
-    open fun remove(activity: AppCompatActivity?) {
+    fun remove(activity: AppCompatActivity?) {
         if (null != activity) {
             activityStack!!.remove(activity)
             activity.finish()
@@ -51,14 +51,14 @@ open class ActivityStack private constructor() {
     /**
      * 获取当前Activity（堆栈中最后一个压入的）
      */
-    open fun currentActivity(): AppCompatActivity {
+    fun currentActivity(): AppCompatActivity {
         return activityStack!!.lastElement()
     }
 
     /**
      * 得到指定类名的Activity
      */
-    open fun getActivity(cls: Class<*>): AppCompatActivity? {
+    fun getActivity(cls: Class<*>): AppCompatActivity? {
         if (null == activityStack) {
             return null
         }
@@ -74,7 +74,7 @@ open class ActivityStack private constructor() {
     /**
      * 结束指定类名的Activity
      */
-    open fun finishActivity(cls: Class<*>) {
+    fun finishActivity(cls: Class<*>) {
         if (null == activityStack || activityStack!!.size == 0) {
             return
         }
@@ -88,7 +88,7 @@ open class ActivityStack private constructor() {
     /**
      * 结束最近的Activity
      */
-    open fun finishTopActivity() {
+    fun finishTopActivity() {
         if (null == activityStack || activityStack!!.size == 0) {
             return
         }
@@ -99,7 +99,7 @@ open class ActivityStack private constructor() {
     /**
      * 清除activity，只保留某个Acitivity
      */
-    open fun finishExceptActivity(cls: Class<*>) {
+    fun finishExceptActivity(cls: Class<*>) {
         if (null == activityStack || activityStack!!.size == 0) {
             return
         }
@@ -111,16 +111,16 @@ open class ActivityStack private constructor() {
         }
     }
 
-    open fun killActivity(activity: AppCompatActivity) {
+    fun killActivity(activity: AppCompatActivity) {
         activity.finish()
         activityStack!!.remove(activity)
     }
 
-    open fun getCount(): Int {
+    fun getCount(): Int {
         return if (activityStack == null) 0 else activityStack!!.size
     }
 
-    open operator fun contains(clazz: Class<out AppCompatActivity?>): Boolean {
+    operator fun contains(clazz: Class<out AppCompatActivity?>): Boolean {
         for (activity in activityStack!!) {
             if (activity.javaClass.name == clazz.name) {
                 return true
@@ -130,14 +130,14 @@ open class ActivityStack private constructor() {
     }
 
     //遍历栈中所有Activity，杀掉所有Activity
-    open fun clearAllActivity() {
+    fun clearAllActivity() {
         val n = activityStack!!.size
         for (i in 0 until n) {
             killActivity(activityStack!!.firstElement())
         }
     }
 
-    open fun test() {
+    fun test() {
         MyUtils.test()
     }
 
