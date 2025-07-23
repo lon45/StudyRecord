@@ -1,6 +1,8 @@
 package com.nader.commonutils.test
 
 import android.util.Log
+import com.nader.commonutils.utils.ActivityStack
+import com.nader.commonutils.utils.DateUtils
 
 /**
  *Date: 2025/7/14
@@ -9,14 +11,12 @@ import android.util.Log
 object MyUtils {
 
     fun test() {
-        var index = 0
-        for (i in 0..10) {
-            index++
+        Log.i("MyUtils","${ActivityStack.getInstance().currentActivity()}")
+        Log.i("MyUtils","${DateUtils.getWeekName()}")
+        ActivityStack.getInstance().currentActivity().run {
+            Log.i("MyUtils","${ActivityStack.getInstance().getCount()}")
+            Log.i("MyUtils","1111111111111111111111")
         }
-        Log.i("MyUtils","$index")
     }
 
-    fun test2() {
-        Log.i("MyUtils","2222222222222222222222")
-    }
 }

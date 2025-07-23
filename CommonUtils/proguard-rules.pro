@@ -20,19 +20,19 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 # 保留对外暴露的类和方法
-#-keep public class com.nader.commonutils.** {
-#    public *;
-#}
-#
-## 如果使用了 Kotlin
-#-keep class com.nader.commonutils.** { *; }
-#
-## 保留注解
-#-keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
-#
-## 如果使用了反射
-#-keepclassmembers class com.nader.commonutils.** {
-#    <fields>;
-#    <methods>;
-#}
+-keep public class com.nader.commonutils.test.** {
+    public *;
+}
+
+# 如果使用了 Kotlin
+-keep class com.nader.commonutils.test.** { *; }
+
+# 保留注解
+-keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
+
+# 如果使用了反射
+-keepclassmembers class com.nader.commonutils.** {
+    <fields>;
+    <methods>;
+}
 
