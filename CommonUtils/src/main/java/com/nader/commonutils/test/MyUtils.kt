@@ -11,12 +11,7 @@ import com.nader.commonutils.utils.DateUtils
 object MyUtils {
 
     fun test() {
-        Log.i("MyUtils","${ActivityStack.getInstance().currentActivity()}")
         Log.i("MyUtils","${DateUtils.getWeekName()}")
-        ActivityStack.getInstance().currentActivity().run {
-            Log.i("MyUtils","${ActivityStack.getInstance().getCount()}")
-            Log.i("MyUtils","1111111111111111111111")
-        }
     }
 
 }
