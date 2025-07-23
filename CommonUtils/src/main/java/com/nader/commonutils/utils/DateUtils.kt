@@ -53,7 +53,7 @@ object DateUtils {
         return weekName
     }
 
-    fun getWeekNameByDate(dateStr:String): String {
+    private fun getWeekNameByDate(dateStr:String): String {
         if(dateStr.isNotEmpty()) {
             val date =  simpleDateFormat3.parse(dateStr)
             return simpleDateFormat10.format(date)
